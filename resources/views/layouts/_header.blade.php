@@ -21,7 +21,7 @@
                     <li class="nav-item dropdown">
 
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            <img src="https://cdn.learnku.com/uploads/avatars/46680_1565082938.jpeg!/both/40x40"/>
+                            <img src="{{ Auth::user()->avatar }}" class="img-responsive img-circle" width="30px" height="30px"/>
                             {{ Auth::user()->name }}
                         </a>
 
