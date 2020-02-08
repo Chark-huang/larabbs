@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-lg-3 col-md-3  hidden-sm hidden-xs user-info">
             <div class="card ">
-                <img class="card-img-top" src="https://cdn.learnku.com/uploads/avatars/46680_1565082938.jpeg!/both/300x300">
+                <img class="card-img-top" src="{{ $user->avatar }}">
                 <div class="card-body">
                     <h5><strong>个人简介</strong></h5>
                     <p>{{ $user->introduction }}</p>
