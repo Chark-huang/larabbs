@@ -17,12 +17,12 @@ class UsersTableSeeder extends Seeder
 
         // 头像假数据
         $avatars = [
-            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/s5ehp11z6s.png',
-            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/Lhd1SHqu86.png',
-            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/LOnMrqbHJn.png',
-            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/xAuDMxteQy.png',
-            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png',
-            'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/NDnzMutoxX.png'
+            env('APP_URL') . '/static/avatar/boy1.png',
+            env('APP_URL') . '/static/avatar/boy2.png',
+            env('APP_URL') . '/static/avatar/boy3.png',
+            env('APP_URL') . '/static/avatar/girl1.png',
+            env('APP_URL') . '/static/avatar/girl2.png',
+            env('APP_URL') . '/static/avatar/girl3.png',
         ];
 
         // 生成数据集合
@@ -44,8 +44,8 @@ class UsersTableSeeder extends Seeder
         $user = User::find(1);
         $user->name = 'Chark';
         $user->email = 'chark@example.com';
-        $user->avatar = 'https://iocaffcdn.phphub.org/uploads/images/201710/14/1/ZqM7iaP4CR.png';
+        $user->avatar = env('APP_URL') . '/static/avatar/tutu.jpg';
         $user->save();
-        
+
     }
 }
