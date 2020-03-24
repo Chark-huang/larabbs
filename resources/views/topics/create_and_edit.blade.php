@@ -65,7 +65,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/simditor.css') }}">
-@endsection
+@stop
 
 @section('scripts')
 <script type="text/javascript" src="{{ asset('js/module.js') }}"></script>
@@ -90,5 +90,4 @@
     })
   })
 </script>
-
-@endsection
+@stop
