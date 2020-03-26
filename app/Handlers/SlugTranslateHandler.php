@@ -6,6 +6,7 @@ namespace App\Handlers;
 use GuzzleHttp\Client;
 use Overtrue\Pinyin\pinyin;
 
+
 class SlugTranslateHandler
 {
     public function translate($text)
