@@ -23,18 +23,9 @@ class ReplyRequest extends FormRequest
      */
     public function rules()
     {
-        switch ($this->method()){
-            // CREATE
-            case 'POST':{
-                return [
-                    'content' => 'required|min:3'
-                ];
-            }
-            case 'DELETE':
-            default:{
-                return  [];
-            }
-        }
+        return [
+            'content' => 'required|min:3'
+        ];
     }
 
     public function messages()
