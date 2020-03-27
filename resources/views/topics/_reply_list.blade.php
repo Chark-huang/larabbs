@@ -18,7 +18,7 @@
 
                     {{--        回复删除按钮--}}
                     <span class="meta float-right">
-                        <a title="删除回复">
+                        <a  title="删除回复">
                             <i class="far fa-trash-alt"></i>
                         </a>
                     </span>
