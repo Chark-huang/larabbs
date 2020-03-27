@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -20,24 +20,28 @@
 
 <body>
 
-    <div id="app" class="">
-        @include('layouts._header')
+<div id="app" class="">
+    @include('layouts._header')
 
-        <div class="container">
+    <div class="container">
 
-            @include('shared._messages')
+        @include('shared._messages')
 
-            @yield('content')
+        @yield('content')
 
-        </div>
-
-        @include('layouts._footer')
     </div>
 
-    {{--<!-- Script -->--}}
-    <script src="{{ mix('js/app.js') }}"></script>
+    @include('layouts._footer')
+</div>
 
-    @yield('scripts')
+@if(app()->isLocal())
+    @include('sudosu::user-selector')
+@endif
+
+{{--<!-- Script -->--}}
+<script src="{{ mix('js/app.js') }}"></script>
+
+@yield('scripts')
 </body>
 
 </html>
