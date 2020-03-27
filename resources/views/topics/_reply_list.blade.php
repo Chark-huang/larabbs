@@ -33,6 +33,7 @@
                 <div class="reply-content text-secondary">
                     {!! $reply->content !!}
                 </div>
+
             </div>
         </li>
         @if( ! $loop->last )
@@ -40,3 +41,5 @@
         @endif
     @endforeach
 </ul>
+
+{!! $replies->appends(Request::except('page'))->render() !!}
