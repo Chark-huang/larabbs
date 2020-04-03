@@ -13,11 +13,22 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    // 全局中间件
     protected $middleware = [
+
+        // 检测是否应用是否进入 [维护模式]
         \App\Http\Middleware\CheckForMaintenanceMode::class,
+
+        // 检测表单请求的数据是否过大
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+
+        // 对提交的请求参数进行 PHP 函数 `trim()` 处理
         \App\Http\Middleware\TrimStrings::class,
+
+        // 将提交请求参数中空子串转换为 null
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+
+        // 修正代理服务器后的服务器参数
         \App\Http\Middleware\TrustProxies::class,
     ];
 
@@ -36,6 +47,8 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\EnsureEmailIsVerified::class,
+            // 记录用户最后活跃时间
+            \App\Http\Middleware\RecordLastActivedTime::class,
         ],
 
         'api' => [

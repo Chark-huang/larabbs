@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\LastActivedAtHelper;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
@@ -14,6 +15,7 @@ use App\Models\Traits\ActiveUserHelper;
 class User extends Authenticatable implements MustVerifyEmailContract
 {
     use HasRoles;
+    use LastActivedAtHelper;
     use MustVerifyEmailTrait;
     use ActiveUserHelper;
 
